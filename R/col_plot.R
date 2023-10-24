@@ -1,22 +1,21 @@
 #' Column plot of the first amino acid in a codon
 #'
-#' @param codon_list A variable which input a codon sequence
-#'
+#' @param peptide A variable which input a peptide#'
 #' @importFrom ggplot2 ggplot aes geom_col theme_bw theme
 #' @importFrom stringr str_split boundary str_count
 #'
 #' @return A col plot describing the occurence of the first amino acid
 #' @export
 
-col_plot <- function(codon_list){
+col_plot <- function(peptide){
   # Getting the list of Amino Acids in the codon
-  aa_codon <- codon_list |>
+  aa_codon <- peptide |>
     stringr::str_split(pattern = stringr::boundary("character"), simplify = TRUE) |>
     as.character() |>
     unique()
 
   # For each AA we get its position in his peptide chain
-  counts <- sapply(aa_codon, function(amino_acid) stringr::str_count(string = codon_list, pattern =  amino_acid)) |>
+  counts <- sapply(aa_codon, function(amino_acid) stringr::str_count(string = peptide, pattern =  amino_acid)) |>
     as.data.frame()
 
   # Renaming columns
