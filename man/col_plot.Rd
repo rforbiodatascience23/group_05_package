@@ -2,19 +2,16 @@
 % Please edit documentation in R/col_plot.R
 \name{col_plot}
 \alias{col_plot}
-\title{Title}
+\title{Column plot of the first amino acid in a codon}
 \usage{
 col_plot(codon_list)
 }
 \arguments{
-\item{codon}{A variable which input a codon sequence}
+\item{codon_list}{A variable which input a codon sequence}
 }
 \value{
-A col plot describing the repartition of codons in the table
+A col plot describing the occurence of the first amino acid
 }
 \description{
-Title
-}
-\examples{
-col_plot(codon)
+Column plot of the first amino acid in a codon
 }
