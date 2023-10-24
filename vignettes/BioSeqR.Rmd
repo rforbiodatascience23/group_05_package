@@ -42,6 +42,14 @@ codons <- get_codons("UUACGAUUUU")
 codons
 ```
 
+## `col_plot()`
+
+The **`col_plot()`** function accepts a sequence of amino acid as an input and will return a column plot representing the count of each amino acid in the sequence. It can also be use with RNA or DNA sequence to show the count of each nucleotide.
+
+```{r}
+col_plot("ACFGAGF")
+```
+
 ## Usage of BioSeqR
 
 The five functions can be collectively employed to determine the amino acid count of a DNA sequence generated at random.
@@ -64,3 +72,5 @@ The five functions can be collectively employed to determine the amino acid coun
 **`BioSeqR`** is designed for managing and analyzing biological sequence data. While our current functions offer a robust set of tools, there are potential enhancements we could consider. For instance, we might implement a function to obtain the reverse complement of a DNA/RNA sequence or introduce a function to address post-transcriptional modifications, especially when inputting mRNA sequences into **`get_codons()`**.
 
 Regarding dependencies, our package leverages functions from the **`ggplot2`** and **`stringr`** packages. It is a good idea to limit the number of dependencies, as excessive reliance on external packages can cause problems for the users, by requiring them to download many additional packages. In BioSeqR, we employ both **`@importFrom package function`** and **`package::function()`** to manage dependencies. The **`@importFrom`** specifically imports the designated function, reducing potential namespace conflicts. On the other hand, using **`package::function()`** avoids the need for updating roxygen2 comments or the **`NAMESPACE`** file for individual functions. This approach also enhances code clarity, as it directly indicates the origin of each imported function.
+
+
