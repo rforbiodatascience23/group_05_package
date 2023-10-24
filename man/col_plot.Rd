@@ -4,10 +4,10 @@
 \alias{col_plot}
 \title{Column plot of the first amino acid in a codon}
 \usage{
-col_plot(codon_list)
+col_plot(peptide)
 }
 \arguments{
-\item{codon_list}{A variable which input a codon sequence}
+\item{peptide}{A variable which input a peptide#'}
 }
 \value{
 A col plot describing the occurence of the first amino acid
