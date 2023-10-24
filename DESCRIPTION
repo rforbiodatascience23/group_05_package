@@ -1,0 +1,10 @@
+Package: Group.5.Dogma
+Type: Package
+Title: Central Dogma Of Molecular Biology
+Version: 0.1.0
+Author: Subhayan Akhuli
+Maintainer: Subhayan Akhuli <s233403@dtu.dk>
+Description: Functions performing Replication, Transcription and Translation.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
