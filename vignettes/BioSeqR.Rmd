@@ -28,7 +28,7 @@ library(Group.5.Dogma)
 
 The **`get_codons()`** function accepts a DNA or RNA sequence and its reading frame's starting position as inputs, with a default starting position of 1. It returns a list of protein codons, each consisting of three nucleotides. If the sequence length isn't a multiple of three, the final one or two nucleotides are omitted.
 
-```{r:get_codon_example_1}
+```{r}
 library(Group.5.Dogma)
 
 codons <- get_codons("ACTGGACCATCG")
