@@ -28,7 +28,7 @@ library(Group.5.Dogma)
 
 The **`get_codons()`** function accepts a DNA or RNA sequence and its reading frame's starting position as inputs, with a default starting position of 1. It returns a list of protein codons, each consisting of three nucleotides. If the sequence length isn't a multiple of three, the final one or two nucleotides are omitted.
 
-```{r}
+```{r:get_codon_example_1}
 library(Group.5.Dogma)
 
 codons <- get_codons("ACTGGACCATCG")
@@ -47,13 +47,16 @@ codons
 The five functions can be collectively employed to determine the amino acid count of a DNA sequence generated at random.
 
 ```{r}
-seq_len <- 9
-DNA_seq <- replicate(seq_len)
-RNA_seq <- transcribe(DNA_seq)
-codons <- get_codons(RNA_seq)
-peptide_seq <- function_4(codons) # Please insert the name of your function here Adomas
-aa_count_plot <- col_plot(peptide_seq)
-aa_count_plot
+#seq_len <- 9
+#DNA_seq <- replicate(seq_len)
+#RNA_seq <- transcribe(DNA_seq)
+#codons <- get_codons(RNA_seq)
+
+# Please insert the name of your function here Adomas and uncomment the code
+
+#peptide_seq <- function_4(codons) 
+#aa_count_plot <- col_plot(peptide_seq)
+#aa_count_plot
 ```
 
 # Further Function Implementation
