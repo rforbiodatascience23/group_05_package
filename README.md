@@ -1,12 +1,5 @@
 
-``` r
-library(Group.5.Dogma)
-#> 
-#> Attachement du package : 'Group.5.Dogma'
-#> L'objet suivant est masqué depuis 'package:base':
-#> 
-#>     replicate
-```
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # Overview
 
@@ -14,6 +7,25 @@ library(Group.5.Dogma)
 for the management and analysis of DNA, RNA, and Protein sequence data.
 
 # Usage
+
+## `transcribe()`
+
+The **`transcribe()`** function accepts a DNA sequence of any length as
+a parameter, and transcribes it, i.e, it returns the corresponding RNA
+sequence for the input DNA sequence.
+
+``` r
+library(Group.5.Dogma)  
+#> 
+#> Attaching package: 'Group.5.Dogma'
+#> The following object is masked from 'package:base':
+#> 
+#>     replicate
+
+RNA <- transcribe("ATGCCGCGTAATAATCCCGTACCA") 
+RNA 
+#> [1] "AUGCCGCGUAAUAAUCCCGUACCA"
+```
 
 ## `get_codons()`
 
@@ -24,16 +36,17 @@ three nucleotides. If the sequence length isn’t a multiple of three, the
 final one or two nucleotides are omitted.
 
 ``` r
-library(Group.5.Dogma)
+library(Group.5.Dogma)  
 
-codons <- get_codons("ACTGGACCATCG")
-codons
+codons <- get_codons("ACTGGACCATCG") 
+codons 
 #> [1] "ACT" "GGA" "CCA" "TCG"
 ```
 
 ``` r
-library(Group.5.Dogma)
-codons <- get_codons("UUACGAUUUU")
+library(Group.5.Dogma) 
+
+codons <- get_codons("UUACGAUUUU") 
 codons
 #> [1] "UUA" "CGA" "UUU"
 ```
@@ -46,26 +59,33 @@ acid in the sequence. It can also be use with RNA or DNA sequence to
 show the count of each nucleotide.
 
 ``` r
+
 col_plot("ACFGAGF")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+<img src="man/figures/README-unnamed-chunk-5-1.svg" width="100%" />
 
 ## Usage of BioSeqR
 
 The five functions can be collectively employed to determine the amino
-acid count of a DNA sequence generated at random.
+acid count of a DNA sequence generated at random. It is possible to use
+the fucntions progressively to generate a DNA sequence of any length,
+generate the corresponding RNA transcript, fetch the codons from the RNA
+sequence, translate the codons into amino acids, and then find the
+number of occurences of each amino acid in the generated peptide
+sequence. Thus, the package covers the entirety of the Central Dogma of
+Molecular Biology.
 
 ``` r
-#seq_len <- 9
-#DNA_seq <- replicate(seq_len)
-#RNA_seq <- transcribe(DNA_seq)
-#codons <- get_codons(RNA_seq)
+#seq_len <- 9 
+#DNA_seq <- replicate(seq_len) 
+#RNA_seq <- transcribe(DNA_seq) 
+#codons <- get_codons(RNA_seq)  
 
-# Please insert the name of your function here Adomas and uncomment the code
+# Please insert the name of your function here Adomas and uncomment the code  
 
-#peptide_seq <- function_4(codons) 
-#aa_count_plot <- col_plot(peptide_seq)
+#peptide_seq <- function_4(codons)  
+#aa_count_plot <- col_plot(peptide_seq) 
 #aa_count_plot
 ```
 
@@ -77,7 +97,8 @@ potential enhancements we could consider. For instance, we might
 implement a function to obtain the reverse complement of a DNA/RNA
 sequence or introduce a function to address post-transcriptional
 modifications, especially when inputting mRNA sequences into
-**`get_codons()`**.
+**`get_codons()`**. Thus, the package can be further augmented to be an
+exhaustive resource for Molecular Biology analysis.
 
 Regarding dependencies, our package leverages functions from the
 **`ggplot2`** and **`stringr`** packages. It is a good idea to limit the
