@@ -3,11 +3,6 @@
 
 ``` r
 library(Group.5.Dogma)
-#> 
-#> Attaching package: 'Group.5.Dogma'
-#> The following object is masked from 'package:base':
-#> 
-#>     replicate
 ```
 
 # Overview

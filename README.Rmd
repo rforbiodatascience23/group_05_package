@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
+```{r setup, warning=FALSE, message=FALSE}
 library(Group.5.Dogma)
 ```
 
