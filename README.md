@@ -1,6 +1,15 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+``` r
+library(Group.5.Dogma)
+#> 
+#> Attaching package: 'Group.5.Dogma'
+#> The following object is masked from 'package:base':
+#> 
+#>     replicate
+```
+
 # Overview
 
 **`BioSeqR`** is a package equipped with a suite of functions designed
@@ -16,11 +25,6 @@ sequence for the input DNA sequence.
 
 ``` r
 library(Group.5.Dogma)  
-#> 
-#> Attaching package: 'Group.5.Dogma'
-#> The following object is masked from 'package:base':
-#> 
-#>     replicate
 
 RNA <- transcribe("ATGCCGCGTAATAATCCCGTACCA") 
 RNA 

@@ -13,6 +13,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+```{r setup}
+library(Group.5.Dogma)
+```
+
 # Overview
 
 **`BioSeqR`** is a package equipped with a suite of functions designed for the management and analysis of DNA, RNA, and Protein sequence data.
