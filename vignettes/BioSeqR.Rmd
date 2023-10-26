@@ -61,6 +61,18 @@ codons
 
 ```
 
+## `translate()`
+
+The **`translate()`** function accepts a set of codons as input and returns a translation as a sequence of amino acids.
+
+```{r}
+library(Group.5.Dogma)
+
+peptide <- translate(c('AUC','AUC','AUC'))
+peptide
+
+```
+
 ```{r}
 library(Group.5.Dogma)
 codons <- get_codons("UUACGAUUUU")
@@ -80,16 +92,14 @@ col_plot("ACFGAGF")
 The five functions can be collectively employed to determine the amino acid count of a DNA sequence generated at random. It is possible to use the fucntions progressively to generate a DNA sequence of any length, generate the corresponding RNA transcript, fetch the codons from the RNA sequence, translate the codons into amino acids, and then find the number of occurences of each amino acid in the generated peptide sequence. Thus, the package covers the entirety of the Central Dogma of Molecular Biology.
 
 ```{r}
-#seq_len <- 9
-#DNA_seq <- replicate(seq_len)
-#RNA_seq <- transcribe(DNA_seq)
-#codons <- get_codons(RNA_seq)
+seq_len <- 9
+DNA_seq <- replicate(seq_len)
+RNA_seq <- transcribe(DNA_seq)
+codons <- get_codons(RNA_seq)
+peptide <- translate(codons)
 
-# Please insert the name of your function here Adomas and uncomment the code
-
-#peptide_seq <- function_4(codons) 
-#aa_count_plot <- col_plot(peptide_seq)
-#aa_count_plot
+aa_count_plot <- col_plot(peptide)
+aa_count_plot
 ```
 
 # Further Function Implementation

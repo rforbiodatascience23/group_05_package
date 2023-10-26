@@ -6,6 +6,6 @@
 #' @export
 #'
 translate <- function(codons){
-      aa_sequence <- paste0(data[codons], collapse = "")
+      aa_sequence <- paste0(codon[codons], collapse = "")
        return(aa_sequence)
    }
