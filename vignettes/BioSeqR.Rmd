@@ -73,12 +73,6 @@ peptide
 
 ```
 
-```{r}
-library(Group.5.Dogma)
-codons <- get_codons("UUACGAUUUU")
-codons
-```
-
 ## `col_plot()`
 
 The **`col_plot()`** function accepts a sequence of amino acid as an input and will return a column plot representing the count of each amino acid in the sequence. It can also be use with RNA or DNA sequence to show the count of each nucleotide.

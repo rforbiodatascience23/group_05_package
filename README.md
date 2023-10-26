@@ -29,7 +29,7 @@ library(Group.5.Dogma)
 
 DNA <- replicate(18)
 DNA
-#> [1] "TATTCTCTTGCATTCCGT"
+#> [1] "GTGCCGTCGGCACTGACT"
 ```
 
 ## `transcribe()`
@@ -75,13 +75,6 @@ peptide
 #> [1] "III"
 ```
 
-``` r
-library(Group.5.Dogma)
-codons <- get_codons("UUACGAUUUU")
-codons
-#> [1] "UUA" "CGA" "UUU"
-```
-
 ## `col_plot()`
 
 The **`col_plot()`** function accepts a sequence of amino acid as an
@@ -93,7 +86,7 @@ show the count of each nucleotide.
 col_plot("ACFGAGF")
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-7-1.svg)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-6-1.svg)<!-- -->
 
 ## Usage of BioSeqR
 
@@ -117,7 +110,7 @@ aa_count_plot <- col_plot(peptide)
 aa_count_plot
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-8-1.svg)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.svg)<!-- -->
 
 # Further Function Implementation
 
