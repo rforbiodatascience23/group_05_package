@@ -24,6 +24,19 @@ library(Group.5.Dogma)
 
 # Usage
 
+## `replicate()`
+
+The **`replicate()`** function generates a random DNA sequence of the specified length.
+
+```{r}
+library(Group.5.Dogma)
+
+# Generate a random DNA sequence of 18 bp length
+
+DNA <- replicate(18)
+DNA
+```
+
 ## `transcribe()`
 
 The **`transcribe()`** function accepts a DNA sequence of any length as a parameter, and transcribes it, i.e, it returns the corresponding RNA sequence for the input DNA sequence.
