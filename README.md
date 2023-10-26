@@ -1,8 +1,13 @@
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+BioSeqR
+================
 
 ``` r
 library(Group.5.Dogma)
+#> 
+#> Attaching package: 'Group.5.Dogma'
+#> The following object is masked from 'package:base':
+#> 
+#>     replicate
 ```
 
 # Overview
@@ -12,6 +17,21 @@ for the management and analysis of DNA, RNA, and Protein sequence data.
 
 # Usage
 
+## `replicate()`
+
+The **`replicate()`** function generates a random DNA sequence of the
+specified length.
+
+``` r
+library(Group.5.Dogma)
+
+# Generate a random DNA sequence of 18 bp length
+
+DNA <- replicate(18)
+DNA
+#> [1] "TATTCTCTTGCATTCCGT"
+```
+
 ## `transcribe()`
 
 The **`transcribe()`** function accepts a DNA sequence of any length as
@@ -19,10 +39,10 @@ a parameter, and transcribes it, i.e, it returns the corresponding RNA
 sequence for the input DNA sequence.
 
 ``` r
-library(Group.5.Dogma)  
+library(Group.5.Dogma)
 
-RNA <- transcribe("ATGCCGCGTAATAATCCCGTACCA") 
-RNA 
+RNA <- transcribe("ATGCCGCGTAATAATCCCGTACCA")
+RNA
 #> [1] "AUGCCGCGUAAUAAUCCCGUACCA"
 ```
 
@@ -35,17 +55,29 @@ three nucleotides. If the sequence length isn’t a multiple of three, the
 final one or two nucleotides are omitted.
 
 ``` r
-library(Group.5.Dogma)  
+library(Group.5.Dogma)
 
-codons <- get_codons("ACTGGACCATCG") 
-codons 
+codons <- get_codons("ACTGGACCATCG")
+codons
 #> [1] "ACT" "GGA" "CCA" "TCG"
 ```
 
-``` r
-library(Group.5.Dogma) 
+## `translate()`
 
-codons <- get_codons("UUACGAUUUU") 
+The **`translate()`** function accepts a set of codons as input and
+returns a translation as a sequence of amino acids.
+
+``` r
+library(Group.5.Dogma)
+
+peptide <- translate(c('AUC','AUC','AUC'))
+peptide
+#> [1] "III"
+```
+
+``` r
+library(Group.5.Dogma)
+codons <- get_codons("UUACGAUUUU")
 codons
 #> [1] "UUA" "CGA" "UUU"
 ```
@@ -58,11 +90,10 @@ acid in the sequence. It can also be use with RNA or DNA sequence to
 show the count of each nucleotide.
 
 ``` r
-
 col_plot("ACFGAGF")
 ```
 
-<img src="man/figures/README-unnamed-chunk-5-1.svg" width="100%" />
+![](README_files/figure-gfm/unnamed-chunk-7-1.svg)<!-- -->
 
 ## Usage of BioSeqR
 
@@ -76,17 +107,17 @@ sequence. Thus, the package covers the entirety of the Central Dogma of
 Molecular Biology.
 
 ``` r
-#seq_len <- 9 
-#DNA_seq <- replicate(seq_len) 
-#RNA_seq <- transcribe(DNA_seq) 
-#codons <- get_codons(RNA_seq)  
+seq_len <- 9
+DNA_seq <- replicate(seq_len)
+RNA_seq <- transcribe(DNA_seq)
+codons <- get_codons(RNA_seq)
+peptide <- translate(codons)
 
-# Please insert the name of your function here Adomas and uncomment the code  
-
-#peptide_seq <- function_4(codons)  
-#aa_count_plot <- col_plot(peptide_seq) 
-#aa_count_plot
+aa_count_plot <- col_plot(peptide)
+aa_count_plot
 ```
+
+![](README_files/figure-gfm/unnamed-chunk-8-1.svg)<!-- -->
 
 # Further Function Implementation
 

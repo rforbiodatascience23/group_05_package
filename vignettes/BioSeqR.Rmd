@@ -1,6 +1,6 @@
 ---
 title: "BioSeqR"
-output: rmarkdown::html_vignette
+output: rmarkdown::pdf_document
 vignette: >
   %\VignetteIndexEntry{BioSeqR}
   %\VignetteEngine{knitr::rmarkdown}

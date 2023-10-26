@@ -1,19 +1,23 @@
 ---
 output: github_document
 ---
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+---
+title: "BioSeqR"
+output: rmarkdown::github_document
+vignette: >
+  %\VignetteIndexEntry{BioSeqR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
+  comment = "#>"
 )
 ```
 
-```{r setup, warning=FALSE, message=FALSE}
+```{r setup}
 library(Group.5.Dogma)
 ```
 
@@ -23,15 +27,29 @@ library(Group.5.Dogma)
 
 # Usage
 
+## `replicate()`
+
+The **`replicate()`** function generates a random DNA sequence of the specified length.
+
+```{r}
+library(Group.5.Dogma)
+
+# Generate a random DNA sequence of 18 bp length
+
+DNA <- replicate(18)
+DNA
+```
+
 ## `transcribe()`
 
 The **`transcribe()`** function accepts a DNA sequence of any length as a parameter, and transcribes it, i.e, it returns the corresponding RNA sequence for the input DNA sequence.
 
 ```{r}
-library(Group.5.Dogma)  
+library(Group.5.Dogma)
 
-RNA <- transcribe("ATGCCGCGTAATAATCCCGTACCA") 
-RNA 
+RNA <- transcribe("ATGCCGCGTAATAATCCCGTACCA")
+RNA
+
 ```
 
 ## `get_codons()`
@@ -39,16 +57,28 @@ RNA
 The **`get_codons()`** function accepts a DNA or RNA sequence and its reading frame's starting position as inputs, with a default starting position of 1. It returns a list of protein codons, each consisting of three nucleotides. If the sequence length isn't a multiple of three, the final one or two nucleotides are omitted.
 
 ```{r}
-library(Group.5.Dogma)  
+library(Group.5.Dogma)
 
-codons <- get_codons("ACTGGACCATCG") 
-codons 
+codons <- get_codons("ACTGGACCATCG")
+codons
+
+```
+
+## `translate()`
+
+The **`translate()`** function accepts a set of codons as input and returns a translation as a sequence of amino acids.
+
+```{r}
+library(Group.5.Dogma)
+
+peptide <- translate(c('AUC','AUC','AUC'))
+peptide
+
 ```
 
 ```{r}
-library(Group.5.Dogma) 
-
-codons <- get_codons("UUACGAUUUU") 
+library(Group.5.Dogma)
+codons <- get_codons("UUACGAUUUU")
 codons
 ```
 
@@ -57,7 +87,6 @@ codons
 The **`col_plot()`** function accepts a sequence of amino acid as an input and will return a column plot representing the count of each amino acid in the sequence. It can also be use with RNA or DNA sequence to show the count of each nucleotide.
 
 ```{r}
-
 col_plot("ACFGAGF")
 ```
 
@@ -66,16 +95,14 @@ col_plot("ACFGAGF")
 The five functions can be collectively employed to determine the amino acid count of a DNA sequence generated at random. It is possible to use the fucntions progressively to generate a DNA sequence of any length, generate the corresponding RNA transcript, fetch the codons from the RNA sequence, translate the codons into amino acids, and then find the number of occurences of each amino acid in the generated peptide sequence. Thus, the package covers the entirety of the Central Dogma of Molecular Biology.
 
 ```{r}
-#seq_len <- 9 
-#DNA_seq <- replicate(seq_len) 
-#RNA_seq <- transcribe(DNA_seq) 
-#codons <- get_codons(RNA_seq)  
+seq_len <- 9
+DNA_seq <- replicate(seq_len)
+RNA_seq <- transcribe(DNA_seq)
+codons <- get_codons(RNA_seq)
+peptide <- translate(codons)
 
-# Please insert the name of your function here Adomas and uncomment the code  
-
-#peptide_seq <- function_4(codons)  
-#aa_count_plot <- col_plot(peptide_seq) 
-#aa_count_plot
+aa_count_plot <- col_plot(peptide)
+aa_count_plot
 ```
 
 # Further Function Implementation
